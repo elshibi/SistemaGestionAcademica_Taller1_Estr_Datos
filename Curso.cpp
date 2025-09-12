@@ -11,4 +11,22 @@ Curso::Curso(int id, string nombre, int cantMax, string carrera, string profesor
     this->profesor = profesor;
 }
 
-//agregar los otros metodos (getters y setters)
+int Curso::getId() const{
+    return id;
+}
+string Curso::getNombre() const{
+    return nombre;
+}
+int Curso::getCantMax() const{
+    return cantMax;
+}
+string Curso::getCarrera() const{
+    return carrera;
+}
+string Curso::getProfesor() const{
+    return profesor;
+}
+
+string Curso::toString() const {
+    return nombre + " (ID: " + to_string(id) + ")";
+}

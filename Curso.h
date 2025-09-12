@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 using namespace std;
@@ -11,5 +12,12 @@ class Curso{
         string profesor;
     public:
         Curso(int,string,int,string,string);
-        //getter, setters y toString (uno que otro metodo)
+        int getId() const;
+        string getNombre() const;
+        int getCantMax() const;
+        string getCarrera() const;
+        string getProfesor() const;
+        string toString() const;
+        ~Curso(){};
+        
 };

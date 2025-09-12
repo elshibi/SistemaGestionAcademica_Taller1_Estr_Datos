@@ -1,16 +1,25 @@
+#pragma once
+#include "LinkedList.h"
+#include "Curso.h"
+#include "Alumno.h"
 #include <iostream>
 #include <string>
-#include "Curso.h"
-#include "LinkedList.h"
+
 using namespace std;
 
 class Inscripcion{
     private:
-        Curso curso;
-        Alumno alumno;
+        Curso* curso;
+        Alumno* alumno;
         LinkedList<float> notas;
     public:
-        //constructor, getters y setters para las inscripciones
+        Inscripcion(Curso*, Alumno*);
+        void agregarNota(float);
+        Curso* getCurso() const;
+        Alumno* getAlumno() const;
+        const LinkedList<float>& getNotas() const;
+        string toString() const;
+        
         
 
 };

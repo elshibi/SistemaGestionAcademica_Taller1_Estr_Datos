@@ -1,8 +1,9 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include "LinkedList.h"
 #include "Inscripcion.h"
-using namespace std;
+#include "Curso.h"
 
 class Alumno{
     private:
@@ -11,9 +12,14 @@ class Alumno{
         string apellido;
         string carrera;
         string fechaIngreso;
-        LinkedList<Inscripcion> cursos;
+        LinkedList<Inscripcion> inscripciones;
     public:
         Alumno(int,string,string,string,string);
-        //getter, setters y toString (uno que otro metodo)
-        //agregar metodo para inscribir los ramos
+        int getId() const;
+        string getNombre() const;
+        string getApellido() const;
+        string getCarrera() const;
+        string getFechaIngreso() const;
+        void inscribirCurso(Curso* curso);
+        string toString() const;
 };
