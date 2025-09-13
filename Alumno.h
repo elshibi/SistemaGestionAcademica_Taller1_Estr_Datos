@@ -3,23 +3,25 @@
 #include <string>
 #include "LinkedList.h"
 #include "Inscripcion.h"
-#include "Curso.h"
 
-class Alumno{
-    private:
-        int id;
-        string nombre;
-        string apellido;
-        string carrera;
-        string fechaIngreso;
-        LinkedList<Inscripcion> inscripciones;
-    public:
-        Alumno(int,string,string,string,string);
-        int getId() const;
-        string getNombre() const;
-        string getApellido() const;
-        string getCarrera() const;
-        string getFechaIngreso() const;
-        void inscribirCurso(Curso* curso);
-        string toString() const;
+class Curso;
+
+class Alumno {
+private:
+    int id;
+    std::string nombre;
+    std::string apellido;
+    std::string carrera;
+    std::string fechaIngreso;
+    LinkedList<Inscripcion> inscripciones;
+public:
+    Alumno(int, std::string, std::string, std::string, std::string);
+    int getId() const;
+    std::string getNombre() const;
+    std::string getApellido() const;
+    std::string getCarrera() const;
+    std::string getFechaIngreso() const;
+    void inscribirCurso(Curso* curso);
+    std::string toString() const;
+    bool operator==(const Alumno& other) const;
 };

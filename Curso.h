@@ -18,6 +18,7 @@ class Curso{
         string getCarrera() const;
         string getProfesor() const;
         string toString() const;
+        bool operator==(const Curso& other) const;
         ~Curso(){};
         
 };

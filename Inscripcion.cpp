@@ -1,9 +1,11 @@
+#include "Inscripcion.h"
+#include "Alumno.h"
+#include "Curso.h"
 #include <iostream>
 #include <string>
-#include "Inscripcion.h"
-using namespace std;
 
-Inscripcion::Inscripcion(Curso* curso,Alumno* alumno): curso(curso), alumno(alumno){
+
+Inscripcion::Inscripcion(Curso* curso,Alumno* alumno): curso(curso), alumno(alumno), notas(){
 
 }
 void Inscripcion::agregarNota(float nota){
@@ -20,5 +22,12 @@ const LinkedList<float>& Inscripcion::getNotas() const{
 }
 
 string Inscripcion::toString() const{
-    return string("Inscripcion: ") + alumno->getNombre() + " "+ alumno->getApellido()+ " Curso: " + curso->getNombre(); 
+    return std::string("Inscripcion: ") + alumno->getNombre() + " "+ alumno->getApellido()+ " Curso: " + curso->getNombre(); 
+}
+
+bool Inscripcion::operator==(const Inscripcion& other) const {
+    if (this->alumno && this->curso && other.alumno && other.curso) {
+        return this->alumno->getId() == other.alumno->getId() && this->curso->getId() == other.curso->getId();
+    }
+    return false;
 }

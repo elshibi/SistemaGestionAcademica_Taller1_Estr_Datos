@@ -26,7 +26,9 @@ string Curso::getCarrera() const{
 string Curso::getProfesor() const{
     return profesor;
 }
-
 string Curso::toString() const {
     return nombre + " (ID: " + to_string(id) + ")";
+}
+bool Curso::operator==(const Curso& other) const {
+    return this->id == other.id;
 }

@@ -15,8 +15,7 @@ public:
     }
 
     void add(const T& dato) {
-        Nodo<T>* nuevoNodo = new Nodo<T>();
-        nuevoNodo->setDato(dato);
+        Nodo<T>* nuevoNodo = new Nodo<T>(dato);
         nuevoNodo->setNext(head);
         head = nuevoNodo;
     }
@@ -86,6 +85,10 @@ public:
             actual = actual->getNext();
         }
         std::cout << "nullptr" << std::endl;
+    }
+
+    Nodo<T>* getHead() const {
+        return head;
     }
 
     ~LinkedList() {

@@ -1,29 +1,34 @@
 #include "Alumno.h"
+#include "Inscripcion.h"
 #include <string>
 #include <iostream>
-using namespace std;
 
-Alumno::Alumno(int id,string nombre,string apellido,string carrera,string fecha){
+Alumno::Alumno(int id, std::string nombre, std::string apellido, std::string carrera, std::string fecha) {
     this->id = id;
     this->nombre = nombre;
     this->apellido = apellido;
     this->carrera = carrera;
     this->fechaIngreso = fecha;
-}   
+}
+
 int Alumno::getId() const {
-    return id; 
+    return id;
 }
-string Alumno::getNombre() const {
-    return nombre; 
+
+std::string Alumno::getNombre() const {
+    return nombre;
 }
-string Alumno::getApellido() const {
+
+std::string Alumno::getApellido() const {
     return apellido;
 }
-string Alumno::getCarrera() const {
-    return carrera; 
+
+std::string Alumno::getCarrera() const {
+    return carrera;
 }
-string Alumno::getFechaIngreso() const {
-    return fechaIngreso; 
+
+std::string Alumno::getFechaIngreso() const {
+    return fechaIngreso;
 }
 
 void Alumno::inscribirCurso(Curso* curso) {
@@ -31,6 +36,9 @@ void Alumno::inscribirCurso(Curso* curso) {
     inscripciones.add(inscripcion);
 }
 
-string Alumno::toString() const {
+std::string Alumno::toString() const {
     return nombre + " " + apellido + " (" + carrera + ")";
+}
+bool Alumno::operator==(const Alumno& other) const {
+    return this->id == other.id;
 }

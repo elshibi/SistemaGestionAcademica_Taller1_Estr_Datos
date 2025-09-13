@@ -1,25 +1,21 @@
 #pragma once
-#include "LinkedList.h"
-#include "Curso.h"
-#include "Alumno.h"
 #include <iostream>
 #include <string>
+#include "LinkedList.h"
+class Alumno;
+class Curso;
 
-using namespace std;
-
-class Inscripcion{
-    private:
-        Curso* curso;
-        Alumno* alumno;
-        LinkedList<float> notas;
-    public:
-        Inscripcion(Curso*, Alumno*);
-        void agregarNota(float);
-        Curso* getCurso() const;
-        Alumno* getAlumno() const;
-        const LinkedList<float>& getNotas() const;
-        string toString() const;
-        
-        
-
+class Inscripcion {
+private:
+    Curso* curso;
+    Alumno* alumno;
+    LinkedList<float> notas;
+public:
+    Inscripcion(Curso* = nullptr, Alumno* = nullptr);
+    void agregarNota(float);
+    Curso* getCurso() const;
+    Alumno* getAlumno() const;
+    const LinkedList<float>& getNotas() const;
+    std::string toString() const;
+    bool operator==(const Inscripcion& other) const;
 };
